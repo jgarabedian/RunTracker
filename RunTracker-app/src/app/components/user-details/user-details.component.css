@@ -1,0 +1,12 @@
+.user-details {
+    padding: 1em;
+}
+
+.user-details__card__header {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.user-details__card__header fa-icon:hover {
+    cursor: pointer;
+}

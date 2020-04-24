@@ -1,0 +1,39 @@
+<div class="container">
+    <!-- In case there aren't any users :( -->
+    <p *ngIf="User.length <= 0" class="no-data text-center">There are no users yet :(</p>
+
+    <!-- User Table -->
+    <table class="table table-striped" *ngIf="User.length > 0">
+        <thead>
+            <th scope="col">User ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">City</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Age</th>
+            <th scope="col">Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of User; let i = index">
+                <th scope="row">{{user._id}}</th>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.city}}</td>
+                <td>{{user.state}}</td>
+                <td>{{user.age}}</td>
+                <td class="tex-center edit-block">
+                    <span class="edit">
+                        <button type="button" [routerLink]="['/user-details/', user._id]" class="btn btn-primary btn-sm">
+                            Details
+                        </button>
+                    </span>
+                    <span class="delete" (click)="deleteUser(user, i)">
+                        <button type="button" class="btn btn-danger btn-sm">
+                            Delete
+                        </button>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

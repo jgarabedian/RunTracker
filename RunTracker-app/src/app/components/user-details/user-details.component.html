@@ -1,0 +1,77 @@
+
+<div class="row justify-content-center user-details">
+    <div *ngIf="!edit" class="col-md-4 user-details__card">
+        <div class="card">
+            <div class="card-header user-details__card__header">
+                {{User['name']}}
+                <fa-icon [icon]="faEdit" (click)="updateEdit()" ></fa-icon>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    {{User['email']}}
+                </li>
+                <li class="list-group-item">
+                    {{User['city']}}, {{User['state']}}
+                </li>
+                <li class="list-group-item">
+                    Age: {{User['age']}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div *ngIf="edit" class="col-md-4 user-details">
+        <div class="user-details__form">
+            <fa-icon [icon]="faTimes" (click)="updateEdit()"></fa-icon>
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                <legend>Edit User Details</legend>
+                <div class="user-details__form__group form-group">
+                    <label for="inputName">
+                        Name
+                    </label>
+                    <input class="form-control" type="text" formControlName="name">
+                    <!-- error -->
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                        Name is required.
+                    </div>
+                </div>
+                <div class=" user-create__form__group form-group">
+                    <label for="inputEmail3">Email</label>
+                    <input class="form-control" type="text" formControlName="email">
+                    <!-- error -->
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.required">
+                      Enter your email.
+                    </div>
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.pattern">
+                      Enter valid email.
+                    </div>
+                  </div>
+                  <div class="user-create__form__group form-group">
+                    <label for="inputCity3">City</label>
+                    <input class="form-control" type="text" formControlName="city">
+                    <!-- error -->
+                    <div class="invalid-feedback" *ngIf="submitted">
+                      Enter a city.
+                    </div>
+                  </div>
+                  <div class="user-create__form__group form-group">
+                    <label for="inputState3">State</label>
+                    <select class="custom-select form-control" (change)="updateState($event.target.value)"
+                      formControlName="state">
+                      <option value="">State</option>
+                      <option *ngFor="let state of State" value="{{state}}">{{state}}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="user-create__form__group form-group">
+                    <label for="inputAge3">Age</label>
+                    <input class="form-control" type="number" formControlName="age">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success btn-lg btn-block" type="submit">
+                        Edit User
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
