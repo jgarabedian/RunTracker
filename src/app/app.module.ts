@@ -3,6 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './service/api.service';
+import { CommonModule } from "@angular/common";
 
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -24,6 +25,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
   imports: [
     AppRoutingModule,
     BrowserModule,
+    CommonModule,
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,

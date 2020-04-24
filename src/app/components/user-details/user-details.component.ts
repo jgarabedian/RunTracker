@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
-import { User } from './../../model/user';
-import { ApiService } from './../../service/api.service';
+import { User } from '../../model/user';
+import { ApiService } from '../../service/api.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { faEdit, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { STATES } from './../../../constants/constants';
+import { STATES } from '../../../constants/constants';
 
 @Component({
   selector: 'app-user-details',

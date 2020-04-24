@@ -50,5 +50,21 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgarabedian/RunTracker.git"
+  },
+  "keywords": [
+    "Run",
+    "Workout"
+  ],
+  "author": "jgarabedian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgarabedian/RunTracker/issues"
+  },
+  "homepage": "https://github.com/jgarabedian/RunTracker#readme"
 }
