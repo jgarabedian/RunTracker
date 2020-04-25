@@ -4,7 +4,7 @@ This project is designed to create a user profile, log workouts, visualize progr
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
-![ ] https://github.com/jgarabedian/RunTracker/workflows/Node.js%20CI/badge.svg
+![Node CLI](https://github.com/jgarabedian/RunTracker/workflows/Node.js%20CI/badge.svg)
 
 ## Development Checklist
 
