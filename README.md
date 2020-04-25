@@ -1,6 +1,35 @@
 # RunTrackerApp
 
+This project is designed to create a user profile, log workouts, visualize progress over time, and then compare with friends
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+
+![ ] https://github.com/jgarabedian/RunTracker/workflows/Node.js%20CI/badge.svg
+
+## Development Checklist
+
+### Database
+
+- [x] Add a User
+- [x] Edit a User
+- [x] Delete a User
+- [x] View a User
+- [ ] Add a Run
+- [ ] Edit a Run
+- [ ] Delete a Run
+- [ ] View a Run
+
+### Views
+- [x] Add a User
+- [x] View All Users
+- [x] User Profile 
+
+### Dashboards
+- [ ] How many runs have a been on
+
+### Capabilities
+- [ ] User Authentication
+- [ ] Choose visualization service
 
 ## Development server
 
