@@ -76,7 +76,7 @@ export class CreateRunComponent implements OnInit {
       this.apiService.createRun(this.runForm.value).subscribe(
         (res) => {
           console.log('Added a run!')
-          this.ngZone.run(() => this.router.navigateByUrl(`/user-details?id=${id}`))
+          this.ngZone.run(() => this.router.navigateByUrl(`/user-details/${this.runForm.value['user_id']}`))
         }, (error) => {
           console.log(error)
         }

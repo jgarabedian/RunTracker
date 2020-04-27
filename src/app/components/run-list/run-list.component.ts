@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../service/api.service';
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router';
+import { Run } from '../../model/run';
 import { Observable } from 'rxjs';
+
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-run-list',
@@ -12,6 +15,9 @@ export class RunListComponent implements OnInit {
   data: any = [];
   Runs:any = []
   user_id = '';
+
+  // Icons
+  faTrashAlt = faTrashAlt;
 
   constructor(
     private apiService: ApiService,

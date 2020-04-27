@@ -15,11 +15,18 @@
                 <td>{{run.miles}}</td>
                 <td>{{run.time_of_day}}</td>
                 <td>{{run.distance}}</td>
-                <td><span class="edit">
-                    <button type="button" class="btn btn-outline-primary btn-sm">
-                        Edit Run
-                    </button>
-                </span></td>
+                <td>
+                    <span class="edit">
+                        <button type="button" class="btn btn-outline-primary btn-sm">
+                            Edit Run
+                        </button>
+                    </span>
+                    <span class="delete">
+                        <button type="button" [routerLink]="['/delete-run/', run._id]"  class="btn btn-outline-danger btn-sm">
+                            <fa-icon [icon]="faTrashAlt"></fa-icon>
+                        </button>
+                    </span>
+                </td>
             </tr>
         </tbody>
     </table>

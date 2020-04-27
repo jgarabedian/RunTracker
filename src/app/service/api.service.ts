@@ -80,6 +80,24 @@ export class ApiService {
     return this.http.get(`${this.baseUri}/run`);
   }
 
+  getRun(id) {
+    let url = `${this.baseUri}/run/read/${id}`;
+    return this.http.get(url, {headers: this.headers}).pipe(
+      map((res: Response) => {
+        return res || {}
+      }),
+      catchError(this.errorMgmt)
+    )
+  }
+
+  // Delete Run
+  deleteRun(id): Observable<any> {
+    let url = `${this.baseUri}/run/delete/${id}`;
+    return this.http.delete(url, { headers: this.headers }).pipe(
+      catchError(this.errorMgmt)
+    )
+  }
+
   // Error handling 
   errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';
