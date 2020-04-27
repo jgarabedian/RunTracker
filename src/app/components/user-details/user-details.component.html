@@ -1,6 +1,11 @@
-
+<div #alert class="alert alert-success alert-dismissible fade" role="alert">
+    User successfully updated.
+    <button type="button" class="close" aria-label="Close" (click)="closeAlert()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 <div class="row justify-content-center user-details">
-    <div *ngIf="!edit" class="col-md-4 user-details__card">
+    <div *ngIf="!edit" class="col-md-4 user-details__card" #card>
         <div class="card">
             <div class="card-header user-details__card__header">
                 {{User['name']}}
@@ -18,6 +23,11 @@
                 </li>
             </ul>
         </div>
+        <button type="button" class="btn btn-outline-primary float-right"
+                [routerLink]="['/create-run/', this.user]">
+            <fa-icon [icon]="faPlus"></fa-icon>
+            Log a Run
+        </button>
     </div>
     <div *ngIf="edit" class="col-md-4 user-details">
         <div class="user-details__form">
@@ -75,3 +85,13 @@
         </div>
     </div>
 </div>
+<app-run-list></app-run-list>
+<!-- <div *ngIf="this.addRunForm" class="user-details__run">
+    <div class="row justify-content-center user-details__run__close">
+        <div class="col-md-4 user-details__run__close__button">
+            <fa-icon [icon]="faTimes" class="float-right" (click)="this.addRunForm = false;"></fa-icon>
+        </div>
+    </div>
+    
+    <app-create-run></app-create-run>
+</div> -->

@@ -55,6 +55,31 @@ export class ApiService {
     )
   }
 
+  // Get User Runs
+  getUserRuns(user_id): Observable<any> {
+    let url = `${this.baseUri}/run/`;
+    return this.http.get(url, {headers: this.headers}).pipe(
+      map((res: Response) => {
+        return res || { }
+      }),
+      catchError(this.errorMgmt)
+    )
+  }
+
+   // Add Run
+   createRun(data): Observable<any> {
+    let url = `${this.baseUri}/run/create`;
+    return this.http.post(url, data)
+      .pipe(
+        catchError(this.errorMgmt)
+      )
+  }
+
+  // Get All runs
+  getRuns() {
+    return this.http.get(`${this.baseUri}/run`);
+  }
+
   // Error handling 
   errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';

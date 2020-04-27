@@ -8,21 +8,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development Checklist
 
+> This is mostly just for me as I go through :)
+
 ### Database
 
 - [x] Add a User
 - [x] Edit a User
 - [x] Delete a User
 - [x] View a User
-- [ ] Add a Run
+- [x] Add a Run
 - [ ] Edit a Run
 - [ ] Delete a Run
-- [ ] View a Run
+- [x] View a Run
 
 ### Views
 - [x] Add a User
 - [x] View All Users
 - [x] User Profile 
+- [x] View Runs by User
 
 ### Dashboards
 - [ ] How many runs have a been on
@@ -51,6 +54,4 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 create-run">
+        <!-- Form -->
+        <div class="create-run__form">
+            <form [formGroup]="runForm" (ngSubmit)="onSubmit()">
+                <legend>Add a run!</legend>
+                <div class="create-run__form__group form-group">
+                    <label for="inputDate">
+                        Date
+                    </label>
+                    <input class="form-control" type="text" 
+                            [ngClass]="{'is-invalid': this.submitted && this.myRunForm.date.errors}"
+                            formControlName="date" placeholder="yyyy-mm-dd">
+                    <!-- error -->
+                    <div class="invalid-feedback">Please Provide a valid date.</div>
+                </div>
+                <div class="create-run__form__group form-group" >
+                    <label for="inputMiles">
+                        Number of Miles
+                    </label>
+                    <input class="form-control" type="number"
+                            [ngClass]="{'is-invalid': this.myRunForm.miles.errors && this.submitted}"
+                            formControlName="miles" placeholder="1">
+                    <!-- error -->
+                    <div class="invalid-feedback">Please Provide a valid miles value.</div>
+                </div>
+                <div class="create-run__form__group form-group">
+                    <label for="inputTime">
+                        Time of Day
+                    </label>
+                    <select class="form-control" (change)="changeTime($event.target.value)" [ngClass]="{'is-invalid': this.submitted && this.myRunForm.time.errors}">
+                        <!-- <option value="">Select Time of Day</option> -->
+                        <option *ngFor="let timeOfDay of TimeOfDay" value="{{timeOfDay}}">
+                            {{timeOfDay}}
+                        </option>
+                    </select>
+                </div>
+                <div class="create-run__form__group form-group">
+                    <label for="inputDistance">
+                        Distance
+                    </label>
+                    <select class="form-control" (change)="updateDistance($event.target.value)" [ngClass]="{'is-invalid': this.submitted && this.myRunForm.distance.errors}">
+                        <!-- <option value="">Describe the distance of the run</option> -->
+                        <option *ngFor="let d of Distance" value="{{d}}">
+                            {{d}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success btn-lg btn-block" type="submit">
+                        Add Run
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../service/api.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 @Component({
@@ -11,7 +12,9 @@ export class UserListComponent implements OnInit {
 
   User:any = [];
 
-  constructor(private apiService: ApiService) {
+  id = this.actRoute.snapshot.paramMap.get('id');
+
+  constructor(private apiService: ApiService, private actRoute: ActivatedRoute) {
     this.readUser()
    }
 

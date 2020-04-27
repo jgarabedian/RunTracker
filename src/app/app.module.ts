@@ -13,6 +13,8 @@ import { UserCreateComponent } from './components/user-create/user-create.compon
 import { UserListComponent } from './components/user-list/user-list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { CreateRunComponent } from './components/create-run/create-run.component';
+import { RunListComponent } from './components/run-list/run-list.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     UserListComponent,
     HeaderComponent,
     UserDetailsComponent,
+    CreateRunComponent,
+    RunListComponent,
   ],
   imports: [
     AppRoutingModule,

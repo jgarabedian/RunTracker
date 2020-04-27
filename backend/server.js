@@ -20,6 +20,7 @@ mongoose.connect(dbConfig.db, {
 );
 
 const userRoute = require('../backend/routes/user.route');
+const runRoute = require('../backend/routes/run.route')
 
 const app = express();
 app.use(bodyParser.json());
@@ -27,9 +28,10 @@ app.use(bodyParser.urlencoded({
    extended: false
 }));
 app.use(cors()); 
-app.use(express.static(path.join(__dirname, 'dist/RunTracker-app')));
-app.use('/', express.static(path.join(__dirname, 'dist/RunTracker-app')));
+app.use(express.static(path.join(__dirname, 'dist/RunTracker')));
+app.use('/', express.static(path.join(__dirname, 'dist/RunTracker')));
 app.use('/api', userRoute);
+app.use('/api/run', runRoute)
 
 // Create port
 const port = process.env.PORT || 4000;

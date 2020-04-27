@@ -1,0 +1,26 @@
+<div class="container">
+    <p *ngIf="Runs.length <= 0" class="no-data text-center">There are no runs for this user :(</p>
+
+    <table class="table table-striped" *ngIf="Runs.length > 0">
+        <thead>
+            <th scope="col">Date</th>
+            <th scope="col">Miles</th>
+            <th scope="col">Time</th>
+            <th scope="col">Distance</th>
+            <th scope="col">Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let run of Runs; let i = index">
+                <td>{{run.date | date }}</td>
+                <td>{{run.miles}}</td>
+                <td>{{run.time_of_day}}</td>
+                <td>{{run.distance}}</td>
+                <td><span class="edit">
+                    <button type="button" class="btn btn-outline-primary btn-sm">
+                        Edit Run
+                    </button>
+                </span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
