@@ -1,3 +1,12 @@
+<div class="row justify-content-center create-run__back">
+    <div class="col-md-4">
+        <button type="button" 
+                class="btn btn-light"
+                (click)="goBack()">
+                Back
+        </button>
+    </div>
+</div>
 <div class="row justify-content-center">
     <div class="col-md-4 create-run">
         <!-- Form -->
@@ -12,7 +21,7 @@
                             [ngClass]="{'is-invalid': this.submitted && this.myRunForm.date.errors}"
                             formControlName="date" placeholder="yyyy-mm-dd">
                     <!-- error -->
-                    <div class="invalid-feedback">Please Provide a valid date.</div>
+                    <div class="invalid-feedback">Please provide a valid date.</div>
                 </div>
                 <div class="create-run__form__group form-group" >
                     <label for="inputMiles">
@@ -24,17 +33,16 @@
                     <!-- error -->
                     <div class="invalid-feedback">Please Provide a valid miles value.</div>
                 </div>
-                <div class="create-run__form__group form-group">
+                <!-- <div class="create-run__form__group form-group">
                     <label for="inputTime">
                         Time of Day
                     </label>
                     <select class="form-control" (change)="changeTime($event.target.value)" [ngClass]="{'is-invalid': this.submitted && this.myRunForm.time.errors}">
-                        <!-- <option value="">Select Time of Day</option> -->
                         <option *ngFor="let timeOfDay of TimeOfDay" value="{{timeOfDay}}">
                             {{timeOfDay}}
                         </option>
                     </select>
-                </div>
+                </div> -->
                 <div class="create-run__form__group form-group">
                     <label for="inputDistance">
                         Distance

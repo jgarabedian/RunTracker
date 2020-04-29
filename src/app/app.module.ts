@@ -16,6 +16,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { CreateRunComponent } from './components/create-run/create-run.component';
 import { RunListComponent } from './components/run-list/run-list.component';
 import { DeleteRunComponent } from './components/delete-run/delete-run.component';
+import { RunEditComponent } from './components/run-edit/run-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DeleteRunComponent } from './components/delete-run/delete-run.component
     CreateRunComponent,
     RunListComponent,
     DeleteRunComponent,
+    RunEditComponent,
   ],
   imports: [
     AppRoutingModule,

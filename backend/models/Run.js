@@ -9,7 +9,7 @@ let Run = new Schema ({
     miles: {
         type: Number
     },
-    time_of_day: {
+    time: {
         type: String
     },
     distance: {

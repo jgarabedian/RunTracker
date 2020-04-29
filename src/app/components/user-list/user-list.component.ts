@@ -3,6 +3,7 @@ import { ApiService } from '../../service/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -13,6 +14,9 @@ export class UserListComponent implements OnInit {
   User:any = [];
 
   id = this.actRoute.snapshot.paramMap.get('id');
+
+  // Icons
+  faTrashAlt = faTrashAlt;
 
   constructor(private apiService: ApiService, private actRoute: ActivatedRoute) {
     this.readUser()

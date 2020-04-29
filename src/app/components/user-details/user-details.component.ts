@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
 import { User } from '../../model/user';
 import { ApiService } from '../../service/api.service';
@@ -35,7 +35,8 @@ export class UserDetailsComponent implements OnInit {
     public fb: FormBuilder,
     private actRoute: ActivatedRoute,
     private apiService: ApiService,
-    private router: Router
+    private router: Router,
+    private ngZone: NgZone
   ) { }
 
   ngOnInit(): void {
@@ -60,7 +61,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
   addRun() {
-    this.addRunForm = !this.addRunForm
+    this.ngZone.run(() => this.router.navigateByUrl(`create-run`))
   }
 
   updateEdit() {
