@@ -90,6 +90,14 @@ export class ApiService {
     )
   }
 
+  // update Run
+  updateRun(id, data): Observable<any> {
+    let url = `${this.baseUri}/run/update/${id}`;
+    return this.http.put(url, data, { headers: this.headers}).pipe(
+      catchError(this.errorMgmt)
+    )
+  }
+
   // Delete Run
   deleteRun(id): Observable<any> {
     let url = `${this.baseUri}/run/delete/${id}`;

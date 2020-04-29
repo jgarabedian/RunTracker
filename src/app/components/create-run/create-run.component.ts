@@ -13,7 +13,7 @@ export class CreateRunComponent implements OnInit {
 
   submitted = false;
   runForm: FormGroup;
-  TimeOfDay:any = ['Morning', 'Afternoon', 'Evening']
+  // TimeOfDay:any = ['Morning', 'Afternoon', 'Evening']
   Distance:any = ['Short', 'Medium', 'Long']
 
   constructor(
@@ -32,17 +32,22 @@ export class CreateRunComponent implements OnInit {
   mainForm() {
     this.runForm = this.fb.group({
       date: ['', [Validators.required]],
-      miles: [1, [Validators.required, , Validators.min(1)]],
+      miles: ['', [Validators.required, , Validators.min(1)]],
       distance: ['', [Validators.required]],
-      time: ['', [Validators.required]]
+      // time: ['', [Validators.required]]
     })
   }
 
-  changeTime(e) {
-    this.time.setValue(e, {
-      onlySelf: false
-    })
+  goBack() {
+    let user = this.actRoute.snapshot.paramMap.get('id')
+    this.ngZone.run(() => this.router.navigateByUrl(`user-details/${user}`))
   }
+
+  // changeTime(e) {
+  //   this.time.setValue(e, {
+  //     onlySelf: false
+  //   })
+  // }
 
   updateDistance(e) {
     this.runForm.get('distance').setValue(e, {
@@ -54,9 +59,9 @@ export class CreateRunComponent implements OnInit {
     return this.runForm.controls;
   }
 
-  get time() {
-    return this.runForm.get('time')
-  }
+  // get time() {
+  //   return this.runForm.get('time')
+  // }
 
   get distance() {
     return this.runForm.get('distance')

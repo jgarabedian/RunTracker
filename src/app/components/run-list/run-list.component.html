@@ -17,7 +17,8 @@
                 <td>{{run.distance}}</td>
                 <td>
                     <span class="edit">
-                        <button type="button" class="btn btn-outline-primary btn-sm">
+                        <button type="button" class="btn btn-outline-primary btn-sm"
+                                [routerLink]="['/edit-run', run.user_id, run._id]">
                             Edit Run
                         </button>
                     </span>

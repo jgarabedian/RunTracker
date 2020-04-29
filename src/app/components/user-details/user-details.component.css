@@ -7,6 +7,6 @@
     justify-content: space-between;
 }
 
-.user-details__card__header fa-icon:hover {
+fa-icon:hover {
     cursor: pointer;
 }

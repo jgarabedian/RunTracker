@@ -23,13 +23,13 @@
                 <td>{{user.age}}</td>
                 <td class="tex-center edit-block">
                     <span class="edit">
-                        <button type="button" [routerLink]="['/user-details/', user._id]" class="btn btn-primary btn-sm">
+                        <button type="button" [routerLink]="['/user-details/', user._id]" class="btn btn-outline-primary btn-sm">
                             Details
                         </button>
                     </span>
                     <span class="delete" (click)="deleteUser(user, i)">
-                        <button type="button" class="btn btn-danger btn-sm">
-                            Delete
+                        <button type="button" class="btn btn-outline-danger btn-sm">
+                            <fa-icon [icon]="faTrashAlt"></fa-icon>
                         </button>
                     </span>
                 </td>

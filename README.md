@@ -17,7 +17,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [x] Delete a User
 - [x] View a User
 - [x] Add a Run
-- [ ] Edit a Run
+- [x] Edit a Run
 - [x] Delete a Run
 - [x] View a Run
 

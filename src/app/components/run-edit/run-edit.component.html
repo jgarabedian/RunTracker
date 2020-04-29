@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-md-8 run-edit">
+        <!-- Form -->
+        <div class="run-edit__form">
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                <legend>Update Run</legend>
+                <div class="run-edit__form__group form-group">
+                    <label for="inputDate">
+                        Date
+                    </label>
+                    <input class="form-control" type="text" 
+                        [ngClass]="{'is-invalid': this.submitted && editRunForm.date.errors}" 
+                        formControlName="date">
+                    <!-- Error -->
+                    <div class="invalid-feedback">Please provide a valid date</div>
+                </div>
+                <div class="run-edit__form__group form-group" >
+                    <label for="inputMiles">
+                        Number of Miles
+                    </label>
+                    <input class="form-control" type="number"
+                            [ngClass]="{'is-invalid': this.submitted && editRunForm.miles.errors}"
+                            formControlName="miles" placeholder="1">
+                    <!-- error -->
+                    <div class="invalid-feedback">Please Provide a valid miles value.</div>
+                </div>
+                <div class="run-edit__form__group form-group">
+                    <label for="inputDistance">
+                        Distance
+                    </label>
+                    <select class="form-control" (change)="updateDistance($event.target.value)" [ngClass]="{'is-invalid': this.submitted && editRunForm.distance.errors}">
+                        <!-- <option value="">Describe the distance of the run</option> -->
+                        <option *ngFor="let d of Distance" value="{{d}}">
+                            {{d}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success btn-lg btn-block" type="submit">
+                        Update Run
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
