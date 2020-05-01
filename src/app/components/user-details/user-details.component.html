@@ -24,6 +24,11 @@
             </ul>
         </div>
         <button type="button" class="btn btn-outline-primary float-right"
+                [routerLink]="['/user-stats', this.user]">
+            <fa-icon [icon]="faChartPie"></fa-icon>
+            See User Stats
+        </button>
+        <button type="button" class="btn btn-outline-primary float-right"
                 [routerLink]="['/create-run/', this.user]">
             <fa-icon [icon]="faPlus"></fa-icon>
             Log a Run

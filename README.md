@@ -32,7 +32,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Capabilities
 - [ ] User Authentication
-- [ ] Choose visualization service
+- [x] Choose visualization service (echarts)
 
 ## Development server
 

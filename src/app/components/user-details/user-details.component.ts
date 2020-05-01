@@ -6,7 +6,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ViewChild, ElementRef } from '@angular/core';
 import { CreateRunComponent } from '../create-run/create-run.component';
 
-import { faEdit, faTimes, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTimes, faPlus, faChartPie } from '@fortawesome/free-solid-svg-icons';
 import { STATES } from '../../../constants/constants';
 
 @Component({
@@ -30,6 +30,7 @@ export class UserDetailsComponent implements OnInit {
   faEdit = faEdit;
   faTimes = faTimes;
   faPlus = faPlus;
+  faChartPie = faChartPie;
 
   constructor(
     public fb: FormBuilder,

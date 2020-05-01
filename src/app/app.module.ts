@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './service/api.service';
 import { CommonModule } from "@angular/common";
+import { NgxEchartsModule } from 'ngx-echarts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -17,6 +18,7 @@ import { CreateRunComponent } from './components/create-run/create-run.component
 import { RunListComponent } from './components/run-list/run-list.component';
 import { DeleteRunComponent } from './components/delete-run/delete-run.component';
 import { RunEditComponent } from './components/run-edit/run-edit.component';
+import { UserStatsComponent } from './components/user-stats/user-stats.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { RunEditComponent } from './components/run-edit/run-edit.component';
     RunListComponent,
     DeleteRunComponent,
     RunEditComponent,
+    UserStatsComponent,
   ],
   imports: [
     AppRoutingModule,
