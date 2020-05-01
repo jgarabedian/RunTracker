@@ -75,7 +75,7 @@ export class RunEditComponent implements OnInit {
       console.warn('Form is not valid');
       return false
     } else if (this.editForm.controls.miles.value <= 0) {
-      this.editRunForm.miles.errors = 'Less than 0'
+      // this.editRunForm.miles.errors = 'Less than 0'
       return false;
     } else {
       let id = this.actRoute.snapshot.paramMap.get('id');

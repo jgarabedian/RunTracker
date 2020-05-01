@@ -2,6 +2,13 @@
     padding: 1em;
 }
 
+#success-alert {
+    position: absolute;
+    width: calc(100% / 3);
+    right: 0;
+    z-index: 99;
+}
+
 .user-details__card__header {
     display: inline-flex;
     justify-content: space-between;

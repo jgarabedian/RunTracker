@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../service/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { sort } from '../../utility/utility';
 import { Run } from '../../model/run';
 import { Observable } from 'rxjs';
 
@@ -38,7 +39,7 @@ export class RunListComponent implements OnInit {
           this.Runs.push(data[i])
         }
       }
-      console.log(data)
+      sort(this.Runs, "date", true)
     })
   }
 

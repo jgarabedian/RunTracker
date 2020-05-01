@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'user-details/:id', component: UserDetailsComponent},
   { path: 'create-run', component: CreateRunComponent},
   { path: 'create-run/:id', component: CreateRunComponent},
-  { path: 'delete-run/:user/:id', component: DeleteRunComponent},
+  { path: 'delete-run/:id', component: DeleteRunComponent},
   { path: 'edit-run/:user/:id', component: RunEditComponent}
 ]
 
