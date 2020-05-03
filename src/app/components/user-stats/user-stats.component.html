@@ -1,6 +1,17 @@
-<div class="row justify-content-center">
-    <h5>User Stats</h5>
-</div>
-<div class="row justify-content-center col-10-md">
-    <div class="user-stats__chart" id="charts" echarts (chartInit)="onChartInit($event)"  class="demo-chart"></div>
+<div class="container user-stats">
+    <div class="row" >
+        <div class="col-2-md user-stats__nav btn-group-vertical">
+            <h5>User Stats</h5>
+            <button [ngClass]="(this.State === 'all-runs') ? 'btn btn-primary':'btn btn-outline-secondary'" type="submit" (click)="this.setState('all-runs')">All Runs</button>
+            <button [ngClass]="(this.State === 'total-miles') ? 'btn btn-primary':'btn btn-outline-secondary'"  type="submit" (click)="this.setState('total-miles')">Total Miles</button>
+            <button type="button" 
+                class="btn btn-outline-secondary"
+                (click)="goBack()">
+                Back
+            </button>
+        </div>
+        <div class="col-10-md user-stats__chart" #chartContainer>
+            <app-user-charts [chartType]=State></app-user-charts>
+        </div>
+    </div>
 </div>
