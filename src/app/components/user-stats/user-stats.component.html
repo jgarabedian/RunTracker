@@ -1,6 +1,23 @@
 <div class="row justify-content-center">
     <h5>User Stats</h5>
 </div>
-<div class="row justify-content-center col-10-md">
+<div class="row justify-content-center col-12-md" (window:resize)="paint();">
     <div class="user-stats__chart" id="charts" echarts (chartInit)="onChartInit($event)"  class="demo-chart"></div>
 </div>
+<div class="row justify-content-center">
+    <div class="col-2-md">
+        &nbsp;
+    </div>
+    <div class="col-8-md">
+        <button type="button" 
+            class="btn btn-light"
+            (click)="goBack()">
+            Back
+        </button>
+    </div>
+    <div class="col-2-md">
+        &nbsp;
+    </div>
+</div>
+
+

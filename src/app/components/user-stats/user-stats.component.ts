@@ -1,7 +1,8 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, NgZone } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router'
 import { NgxEchartsModule } from 'ngx-echarts';
 import { EChartOption } from 'echarts';
+import * as Utility from '../../utility/utility'
 import { ApiService } from '../../service/api.service';
 import * as echarts from 'echarts';
 
@@ -16,6 +17,7 @@ export class UserStatsComponent implements OnInit {
   Dates:any = [];
   Miles:any = [];
   Chart:any;
+  User = '';
 
   // Echarts config
   options: any;
@@ -27,42 +29,41 @@ export class UserStatsComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private actRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private ngZone: NgZone
   ) { }
 
   ngOnInit(): void {
     this.getOptions();
-    let user = this.actRoute.snapshot.paramMap.get('id');
-    this.apiService.getRuns().subscribe((data) => {
-      this.Runs = data;
-      for (let idx = 0; idx < this.Runs.length; idx++) {
-        this.Dates.push(this.Runs[idx].date);
-        this.Miles.push(this.Runs[idx].miles);
-      }
-      this.myEchart = echarts.init(document.querySelector('#charts'));
-      this.myEchart.setOption(this.options)
-    })
-    
-
-    // this.onChartInit(this)
+    this.User = this.actRoute.snapshot.paramMap.get('user');
+    this.myEchart = echarts.init(document.querySelector('#charts'));
+    this.getRuns();
 
   }
-  getRuns(user) {
+
+  goBack() {
+    this.ngZone.run(() => this.router.navigateByUrl(`user-details/${this.User}`))
+  }
+
+  getRuns() {
     this.apiService.getRuns().subscribe((data) => {
-      this.Runs = data;
+      this.Runs = Utility.convertDates(Utility.sort(Utility.filterUser(data, 'user_id', this.User), 'date', false), 'date', 'abr');
       this.getData();
     })
   }
 
+
+
   getData() {
     for (let idx = 0; idx < this.Runs.length; idx++) {
       this.Dates.push(this.Runs[idx].date);
-      this.Miles.push(this.Runs[idx].distance);
+      this.Miles.push(this.Runs[idx].miles);
     }
     this.paint();
   }
 
   paint() {
+    this.getOptions();
     this.myEchart.setOption(this.options)
   }
 
@@ -78,7 +79,8 @@ export class UserStatsComponent implements OnInit {
       },
       xAxis: {
         data: this.Dates,
-        silent: false
+        silent: false,
+        type: 'category'
       },
       yAxis: {
         type: 'value',
@@ -87,13 +89,20 @@ export class UserStatsComponent implements OnInit {
       series: [
           {
             name: 'Distance',
-            type: 'bar',
+            type: 'line',
             data: this.Miles,
             label: {
               normal: {
                 show: true,
               position: 'top',
               }
+            },
+            legendHoverLink: true,
+            tooltip: {
+              position: 'top',
+              formatter: '{b0}: {c0}<br />{b1}: {c1}',
+              borderColor: 'black',
+              borderWidth: 5
             },
             animationDelay: function(idx) {
               return idx * 10 + 100
