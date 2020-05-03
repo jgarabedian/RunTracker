@@ -19,6 +19,7 @@ import { RunListComponent } from './components/run-list/run-list.component';
 import { DeleteRunComponent } from './components/delete-run/delete-run.component';
 import { RunEditComponent } from './components/run-edit/run-edit.component';
 import { UserStatsComponent } from './components/user-stats/user-stats.component';
+import { UserChartsComponent } from './components/user-charts/user-charts.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UserStatsComponent } from './components/user-stats/user-stats.component
     DeleteRunComponent,
     RunEditComponent,
     UserStatsComponent,
+    UserChartsComponent,
   ],
   imports: [
     AppRoutingModule,
