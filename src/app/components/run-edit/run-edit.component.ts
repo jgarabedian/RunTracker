@@ -13,7 +13,8 @@ import { Run } from '../../model/run'
 export class RunEditComponent implements OnInit {
 
   submitted = false;
-  Run = {}
+  Run = {};
+  User = ''
   editForm: FormGroup;
 
   // TimeOfDay:any = ['Morning', 'Afternoon', 'Evening']
@@ -31,6 +32,7 @@ export class RunEditComponent implements OnInit {
 
   ngOnInit(): void {
     let id = this.actRoute.snapshot.paramMap.get('id');
+    this.User = this.actRoute.snapshot.paramMap.get('user')
     this.getRun(id);
     this.editForm = this.fb.group({
       date: ['', [Validators.required]],
@@ -59,14 +61,12 @@ export class RunEditComponent implements OnInit {
     })
   }
 
-  // updateTime(e) {
-  //   this.editForm.get('time').setValue(e, {
-  //     onlySelf: false
-  //   })
-  // }
-
   get editRunForm() {
     return this.editForm.controls;
+  }
+
+  goBack() {
+    this.ngZone.run(() => this.router.navigateByUrl(`user-details/${this.User}`))
   }
 
   onSubmit() {
