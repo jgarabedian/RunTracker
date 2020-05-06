@@ -28,7 +28,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [x] View Runs by User
 
 ### Dashboards
-- [ ] How many runs have a been on
+- [ ] How many runs have I been on
+- [x] How many miles have I run
+- [x] Show my runs over time
 
 ### Capabilities
 - [ ] User Authentication
