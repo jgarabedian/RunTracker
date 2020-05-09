@@ -107,6 +107,7 @@ export class UserChartsComponent implements OnChanges {
         type: 'value',
         name: label
       },
+      tooltip: { },
       series: [
           {
             name: label,
@@ -120,15 +121,20 @@ export class UserChartsComponent implements OnChanges {
             },
             legendHoverLink: true,
             tooltip: {
-              position: 'top',
-              formatter: '{b0}: {c0}<br />{b1}: {c1}',
-              borderColor: 'black',
-              borderWidth: 5
+              position: 'bottom',
+              formatter: '{b0}<br>{c0} Miles',
+              borderColor: '#007BFF',
+              borderWidth: 1,
+              backgroundColor: '#F2F2F2',
+              textStyle: {
+                color: '#007BFF'
+              }
+              
             },
             animationDelay: function(idx) {
               return idx * 10 + 100
             },
-            color: ['#007bff']
+            color: ['#007BFF']
         },
         
       ],
