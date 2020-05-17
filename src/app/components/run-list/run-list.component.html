@@ -5,7 +5,6 @@
         <thead>
             <th scope="col">Date</th>
             <th scope="col">Miles</th>
-            <th scope="col">Time</th>
             <th scope="col">Distance</th>
             <th scope="col">Action</th>
         </thead>
@@ -13,11 +12,10 @@
             <tr *ngFor="let run of Runs; let i = index">
                 <td>{{run.date | date }}</td>
                 <td>{{run.miles}}</td>
-                <td>{{run.time_of_day}}</td>
                 <td>{{run.distance}}</td>
                 <td>
                     <span class="edit">
-                        <button type="button" class="btn btn-outline-primary btn-sm"
+                        <button type="button" class="btn btn-outline-primary btn-sm"x
                                 [routerLink]="['/edit-run', run.user_id, run._id]">
                             Edit Run
                         </button>
